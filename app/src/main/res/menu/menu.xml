@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/aboutTheApp"
+            android:icon="@drawable/ic_bat3"
+            android:title="@string/about_the_app"
+
+            />
+        <item android:id="@+id/aboutTheAuthor"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/about_the_author"/>
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="@string/exit"
+            android:id="@+id/exit"
+            android:icon="@drawable/ic_logout"/>
+    </group>
+</menu>
+

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Battery Temperature</string>
+    <string name="menu_open">Open</string>
+    <string name="close_menu">Close</string>
+    <string name="second_paragraph">\t\tIn temperatures lower than 10º, to be more specific in cold temperatures such as -5º, the battery performance decreases up to 20% and something very similar happens when the temperature approaches 40º, in the case of heat percentage of battery performance is reduced up to 15%. Luckily, this low performance in the mobile battery turns out to be something momentary and has no permanent side effects in the useful life of your battery.\n\tOne of the most notable differences when a device is exposed to these extreme temperatures, is that for example in the cold the effect is only noticeable in the percentage of the battery and it does not affect the system, but the heat does slow down the system,for example if the mobile is exposed directly to the sun, the battery can get overheated and breakdown.</string>
+    <string name="first_Paragraph">\t\tThe truth is that the battery of mobile phones is designed to work in a suitable temperature that oscillates between 20 degrees or a little more. When the battery begins to work in temperatures below 10 degrees or above 30 degrees is when its performance automatically begins to decrease to protect the state of the battery and prevent permanent damage to it.</string>
+    <string name="third_paragraph">I had a National Diploma certificate in Computer Science, which i spent 2-years for acquiring the professional knowledge in the institute.\n\n\tIn the next 10 years, I\'d like to move into a Chief Technology Officer role. A position like this senior software engineer job would let me gain more experience with project management and leadership</string>
+    <string name="ver">v1.0</string>
+    <string name="displayDate">Date</string>
+    <string name="degree">°</string>
+    <string name="measuringTempValue">Measurement value of Temperature</string>
+    <string name="zero_zero">0.0</string>
+    <string name="thirtySixPointFive">36.5</string>
+    <string name="high">High</string>
+    <string name="low">low</string>
+    <string name="fourtyFourPointOne">44.1</string>
+    <string name="normal">Normal</string>
+    <string name="twentyFivePointZEro">25.0</string>
+    <string name="about_the_app">About the App</string>
+    <string name="about_the_author">About the Author</string>
+    <string name="exit">Exit</string>
+    <string name="usage">Usage</string>
+    <string name="BatteryUsage">Battery Temperature application aids you to determine, what condition is your battery in a given certain time.\n\tFor a productive and long lasting of your mobile device battery it is advisable you make use of the app time-to-time.</string>
+    <string name="TheEffectOfExtreme">The Effect of Extreme Temperatures</string>
+    <style name="animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+</resources>

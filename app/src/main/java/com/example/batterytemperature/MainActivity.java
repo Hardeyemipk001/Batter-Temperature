@@ -15,7 +15,10 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -35,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     DrawerLayout drawerLayout;
     Dialog dialog;
+    Dialog dialog1;
     NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +62,12 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.aboutTheAuthor:
-                        Intent intent1 = new Intent(MainActivity.this,About_author.class);
-                        startActivity(intent1);
+                        dialog.show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.exit:
-                        finish();
-                        System.exit(0);
+                        dialog1.show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
                 }
                 return true;
             }
@@ -80,11 +84,43 @@ public class MainActivity extends AppCompatActivity {
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.about);
+        dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+        Button closeDialog = dialog.findViewById(R.id.close_dialog);
+        closeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog1 = new Dialog(MainActivity.this);
+        dialog1.setContentView(R.layout.exit);
+        dialog1.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
+        dialog1.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog1.setCancelable(false);
+        Button exitApp = dialog1.findViewById(R.id.exitApp);
+        exitApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                System.exit(0);
 
+            }
+        });
+        Button closeDialog1 = dialog1.findViewById(R.id.close_dialog);
+        closeDialog1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog1.dismiss();
+            }
+        });
     }
 
     final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -92,15 +128,8 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             BatteryTemp = (float) (intent.getIntExtra("temperature", -1)) / 10;
             TempShow.setText(BatteryTemp + "");
-
         }
     };
-
-
-    public void about_Author(View view) {
-        Intent intent = new Intent(this, About_author.class);
-        startActivity(intent);
-    }
 
     public void about_App(View view) {
         Intent intent = new Intent(this, About_app.class);
@@ -112,9 +141,6 @@ public class MainActivity extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        return  super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
-
-
-
 }

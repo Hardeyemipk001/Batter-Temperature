@@ -11,15 +11,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="#A9BCBF"
+        android:elevation="1.2dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/ic_back_"
-            android:onClick="navigate1"
-            android:textColor="@color/black" />
+            android:drawableLeft="@drawable/ic_back"
+            android:onClick="navigate1" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,8 +27,8 @@
             android:fontFamily="sans-serif-condensed"
             android:text="@string/app_name"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:textSize="21sp"
             android:textStyle="bold" />
     </RelativeLayout>
     <ScrollView
@@ -97,6 +97,7 @@
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     />
+
 
 
             </LinearLayout>

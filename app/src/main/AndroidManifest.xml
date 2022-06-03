@@ -13,10 +13,6 @@
             android:name=".About_app"
             android:screenOrientation="portrait"
             android:exported="false" />
-        <activity
-            android:name=".About_author"
-            android:screenOrientation="portrait"
-            android:exported="false" />
 
 
         <meta-data

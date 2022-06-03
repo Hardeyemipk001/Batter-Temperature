@@ -30,15 +30,6 @@
         android:text="@string/email"
         android:textColor="@color/black" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:drawableStart="@drawable/ic_baseline_person_24"
-        android:drawablePadding="10dp"
-        android:text="@string/phone_number"
-        android:textColor="@color/black" />
-
     <Button
         android:id="@+id/close_dialog"
         android:layout_width="wrap_content"

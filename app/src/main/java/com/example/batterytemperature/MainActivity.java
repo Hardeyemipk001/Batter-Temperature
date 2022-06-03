@@ -3,7 +3,6 @@ package com.example.batterytemperature;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -18,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     DrawerLayout drawerLayout;
     Dialog dialog;
-    Dialog dialog1;
     NavigationView navigationView;
 
 
@@ -66,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.exit:
-                        dialog1.show();
+                        finish();
+                        System.exit(0);
                         drawerLayout.closeDrawer(GravityCompat.START);
                 }
                 return true;
@@ -98,27 +97,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-            }
-        });
-        dialog1 = new Dialog(MainActivity.this);
-        dialog1.setContentView(R.layout.exit);
-        dialog1.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
-        dialog1.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog1.setCancelable(false);
-        Button exitApp = dialog1.findViewById(R.id.exitApp);
-        exitApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                System.exit(0);
-
-            }
-        });
-        Button closeDialog1 = dialog1.findViewById(R.id.close_dialog);
-        closeDialog1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog1.dismiss();
             }
         });
     }
